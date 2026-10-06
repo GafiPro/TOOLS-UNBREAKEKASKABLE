@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "tools_unbreakable",
+  "version": "${version}",
+  "name": "Tools Unbreakable",
+  "description": "Makes items with at least one enchantment unbreakable.",
+  "authors": ["GafiPro"],
+  "contact": {
+    "sources": "https://github.com/GafiPro/TOOLS-UNBREAKEKASKABLE"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.gafipro.toolsunbreakable.ToolsUnbreakable"
+    ]
+  },
+  "mixins": [
+    "tools-unbreakable.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.10",
+    "minecraft": "~1.21.1",
+    "java": ">=21"
+  }
+}
