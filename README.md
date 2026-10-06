@@ -4,11 +4,17 @@ Fabric mod for **Minecraft 1.21.1**.
 
 ## What it does
 
-As soon as an ItemStack has at least one normal enchantment in its
+When a mining tool has at least one normal enchantment in its
 minecraft:enchantments component, the mod adds the vanilla
 minecraft:unbreakable component.
 
-That means the item:
+Supported tool categories:
+
+- Pickaxes
+- Shovels
+- Hoes
+
+The tool:
 
 - stops losing durability;
 - shows the vanilla **Unbreakable** tooltip;
