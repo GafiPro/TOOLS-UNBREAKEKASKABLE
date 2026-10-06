@@ -1,32 +1,33 @@
 # Tools Unbreakable
 
-Fabric mod for **Minecraft 1.21.1**.
+Fabric mod for Minecraft 1.21.1.
 
 ## What it does
 
-When a mining tool has at least one normal enchantment in its
-minecraft:enchantments component, the mod adds the vanilla
-minecraft:unbreakable component.
+Any item that has at least one normal enchantment becomes unbreakable.
 
-Supported tool categories:
+The rule uses the item's minecraft:enchantments component, so it works with
+enchanted tools and any other damageable item.
 
-- Pickaxes
-- Shovels
-- Hoes
+The protection is applied in two ways:
 
-The tool:
+1. Enchanted stacks receive the vanilla minecraft:unbreakable component when
+   their enchantments are set.
+2. ItemStack#isDamageable() returns false for enchanted stacks, so vanilla
+   durability damage is blocked even for stacks created or loaded by another
+   system.
 
-- stops losing durability;
-- shows the vanilla **Unbreakable** tooltip;
-- keeps the unbreakable component when the stack is copied, saved and loaded.
+This means an enchanted item:
+
+- does not lose durability through normal Minecraft damage;
+- reports itself as unbreakable to ItemStack#isUnbreakable();
+- keeps working after being copied or saved/loaded.
 
 The mod does not require Fabric API.
 
 ## Build
 
 Requires Java 21 and Gradle.
-
-Run:
 
     gradle clean build --no-daemon --max-workers=1
 
