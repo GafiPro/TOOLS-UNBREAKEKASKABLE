@@ -39,15 +39,4 @@ public abstract class ItemStackMixin {
             cir.setReturnValue(false);
         }
     }
-
-    @Inject(method = "isUnbreakable", at = @At("RETURN"), cancellable = true)
-    private void toolsUnbreakable$enchantedStacksAreUnbreakable(
-            CallbackInfoReturnable<Boolean> cir
-    ) {
-        ItemStack stack = (ItemStack) (Object) this;
-
-        if (stack.hasEnchantments()) {
-            cir.setReturnValue(true);
-        }
-    }
 }
